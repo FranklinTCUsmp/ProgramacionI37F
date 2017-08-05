@@ -1,0 +1,6 @@
+C:\Users\Jonathan\Documents\GitHub\ProgramacionI37F\Semana 02\PRYEjercicio2\PRYEjercicio2\bin\Debug\PRYEjercicio2.exe.config
+C:\Users\Jonathan\Documents\GitHub\ProgramacionI37F\Semana 02\PRYEjercicio2\PRYEjercicio2\bin\Debug\PRYEjercicio2.exe
+C:\Users\Jonathan\Documents\GitHub\ProgramacionI37F\Semana 02\PRYEjercicio2\PRYEjercicio2\bin\Debug\PRYEjercicio2.pdb
+C:\Users\Jonathan\Documents\GitHub\ProgramacionI37F\Semana 02\PRYEjercicio2\PRYEjercicio2\obj\Debug\PRYEjercicio2.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\GitHub\ProgramacionI37F\Semana 02\PRYEjercicio2\PRYEjercicio2\obj\Debug\PRYEjercicio2.exe
+C:\Users\Jonathan\Documents\GitHub\ProgramacionI37F\Semana 02\PRYEjercicio2\PRYEjercicio2\obj\Debug\PRYEjercicio2.pdb
