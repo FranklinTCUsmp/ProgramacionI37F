@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+
+    var productos = (List<FastFoodApp.Models.Producto>)ViewBag.ListadoDeProductos;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/CSS/Fastfood.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <img height="200" src="https://cdn.dribbble.com/users/71890/screenshots/2235044/fast_food_logo_1x.jpg" />
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/productos/listado">Listado de productos</a></li>
+            <li><a href="/productos/promociones">Promociones</a></li>
+            <li><a href="/portal/contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <div>
+        <h1>Listado de productos</h1>
+
+        @foreach(var producto in productos)
+        {
+            <div class="producto">
+                <h2>@producto.Nombre</h2>
+                <img width="300" src="@producto.Foto" />
+            </div>
+        }
+
+    </div>
+    <footer>
+        Fastfood &copy; 2017
+    </footer>
+</body>
+</html>
