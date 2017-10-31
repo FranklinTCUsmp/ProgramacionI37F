@@ -1,47 +1,23 @@
-﻿
-@{
-    Layout = null;
+﻿@model List<FastFoodApp.Models.Producto>
 
-    var productos = (List<FastFoodApp.Models.Producto>)ViewBag.ListadoDeProductos;
+@{
+    Layout = "~/Views/Shared/Plantilla.cshtml";
 }
 
-<!DOCTYPE html>
+<h1>Listado de productos</h1>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-    <link href="~/Content/CSS/Fastfood.css" rel="stylesheet" />
-</head>
-<body>
-    <header>
-        <img height="200" src="https://cdn.dribbble.com/users/71890/screenshots/2235044/fast_food_logo_1x.jpg" />
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/productos/listado">Listado de productos</a></li>
-            <li><a href="/productos/promociones">Promociones</a></li>
-            <li><a href="/portal/contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    <div>
-        <h1>Listado de productos</h1>
+@foreach (var producto in Model)
+{
+    <div class="producto">
+        <h2>@producto.Nombre</h2>
 
-        @foreach(var producto in productos)
-        {
-            <div class="producto">
-                <h2>@producto.Nombre</h2>
-                <img width="300" src="@producto.Foto" />
-                <br />
-                <span>@producto.Precio</span>
-                <br />
-                <span>@producto.Categoria.Nombre</span>
-            </div>
-        }
-
+        <a href="~/productos/ver/@producto.Id">
+            <img width="300" src="@producto.Foto" />
+        </a>
+        
+        <br />
+        <span>@producto.Precio</span>
+        <br />
+        <span>@producto.Categoria.Nombre</span>
     </div>
-    <footer>
-        Fastfood &copy; 2017
-    </footer>
-</body>
-</html>
+}

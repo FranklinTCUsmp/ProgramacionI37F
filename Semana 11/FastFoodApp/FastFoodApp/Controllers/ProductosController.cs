@@ -14,9 +14,18 @@ namespace FastFoodApp.Controllers
             var modelo = new ProductosModel();
 
             var productos = modelo.ListarProductos();
-            ViewBag.ListadoDeProductos = productos;
+            
 
-            return View();
+            return View(productos);
+        }
+
+        public ActionResult Ver(int id)
+        {
+            var modelo = new ProductosModel();
+
+            var producto = modelo.GetProductoPorId(id);
+
+            return View(producto);
         }
 
         public ActionResult Promociones()

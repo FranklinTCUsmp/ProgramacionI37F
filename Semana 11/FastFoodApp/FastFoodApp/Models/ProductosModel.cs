@@ -15,5 +15,14 @@ namespace FastFoodApp.Models
 
             return productos;
         }
+
+        public Producto GetProductoPorId(int id)
+        {
+            var contexto = new FastfoodEntities();
+
+            var producto = contexto.Productos.FirstOrDefault(p => p.Id == id);
+
+            return producto;
+        }
     }
 }

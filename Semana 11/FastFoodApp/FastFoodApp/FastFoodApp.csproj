@@ -154,6 +154,8 @@
     <None Include="packages.config" />
     <Content Include="Views\Productos\Listado.cshtml" />
     <Content Include="Views\Portal\Contacto.cshtml" />
+    <Content Include="Views\Shared\Plantilla.cshtml" />
+    <Content Include="Views\Productos\Ver.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
