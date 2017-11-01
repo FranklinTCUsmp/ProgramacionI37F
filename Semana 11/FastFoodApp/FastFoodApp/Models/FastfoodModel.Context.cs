@@ -27,5 +27,6 @@ namespace FastFoodApp.Models
     
         public virtual DbSet<Categoria> Categorias { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
+        public virtual DbSet<Consulta> Consultas { get; set; }
     }
 }

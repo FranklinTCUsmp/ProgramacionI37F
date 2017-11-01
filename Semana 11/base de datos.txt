@@ -1,0 +1,80 @@
+USE [Fastfood]
+GO
+/****** Object:  Table [dbo].[Categorias]    Script Date: 31/10/2017 7:35:06 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Categorias](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+ CONSTRAINT [PK_Categorias] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Consultas]    Script Date: 31/10/2017 7:35:06 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Consultas](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[NombreCompleto] [varchar](50) NULL,
+	[Asunto] [varchar](50) NULL,
+	[FechaCreacion] [datetime] NULL,
+	[Mensaje] [varchar](max) NULL,
+ CONSTRAINT [PK_Consultas] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Productos]    Script Date: 31/10/2017 7:35:07 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Productos](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Precio] [decimal](6, 2) NULL,
+	[Descripcion] [varchar](max) NULL,
+	[CategoriaId] [int] NULL,
+	[Foto] [varchar](max) NULL,
+ CONSTRAINT [PK_Productos] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Categorias] ON 
+GO
+INSERT [dbo].[Categorias] ([Id], [Nombre]) VALUES (1, N'Comida Criolla')
+GO
+INSERT [dbo].[Categorias] ([Id], [Nombre]) VALUES (2, N'Comida Japonesa')
+GO
+INSERT [dbo].[Categorias] ([Id], [Nombre]) VALUES (3, N'Comida Internacional')
+GO
+SET IDENTITY_INSERT [dbo].[Categorias] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Consultas] ON 
+GO
+INSERT [dbo].[Consultas] ([Id], [NombreCompleto], [Asunto], [FechaCreacion], [Mensaje]) VALUES (1, N'Jonathan', N'duda', CAST(N'2017-10-31T19:22:17.313' AS DateTime), N'abc')
+GO
+SET IDENTITY_INSERT [dbo].[Consultas] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Productos] ON 
+GO
+INSERT [dbo].[Productos] ([Id], [Nombre], [Precio], [Descripcion], [CategoriaId], [Foto]) VALUES (1, N'Lomo Saltado', CAST(20.00 AS Decimal(6, 2)), NULL, 1, N'http://comidasperuanas.net/wp-content/uploads/2015/08/Lomo-Saltado-730x430.jpg')
+GO
+INSERT [dbo].[Productos] ([Id], [Nombre], [Precio], [Descripcion], [CategoriaId], [Foto]) VALUES (2, N'Ceviche Mixto', CAST(15.00 AS Decimal(6, 2)), NULL, 1, N'http://comidasperuanas.net/wp-content/uploads/2015/07/Ceviche-de-Pescado.jpg')
+GO
+SET IDENTITY_INSERT [dbo].[Productos] OFF
+GO
+ALTER TABLE [dbo].[Productos]  WITH CHECK ADD  CONSTRAINT [FK_Productos_Categorias] FOREIGN KEY([CategoriaId])
+REFERENCES [dbo].[Categorias] ([Id])
+GO
+ALTER TABLE [dbo].[Productos] CHECK CONSTRAINT [FK_Productos_Categorias]
+GO

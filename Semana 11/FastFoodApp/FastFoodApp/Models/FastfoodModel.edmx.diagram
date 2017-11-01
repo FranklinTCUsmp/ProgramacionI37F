@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="FastfoodModel.Categoria" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="FastfoodModel.Producto" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="FastfoodModel.FK_Productos_Categorias" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FastfoodModel.Consulta" Width="1.5" PointX="5.625" PointY="1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

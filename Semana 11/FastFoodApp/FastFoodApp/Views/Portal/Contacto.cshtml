@@ -1,5 +1,27 @@
-﻿@{
+﻿@model FastFoodApp.Models.Consulta
+@{
     Layout = "~/Views/Shared/Plantilla.cshtml";
 }
 
 <h1>Contacto</h1>
+
+<form action="~/portal/procesarcontacto" method="post">
+    <div class="fila">
+        <label>Nombre completo</label>
+        @Html.TextBoxFor(m => m.NombreCompleto)
+    </div>
+
+    <div class="fila">
+        <label>Asunto</label>
+        @Html.TextBoxFor(m => m.Asunto)
+    </div>
+
+    <div class="fila">
+        <label>Mensaje</label>
+        @Html.TextAreaFor(m => m.Mensaje)
+    </div>
+
+    <div class="fila">
+        <button>Enviar consulta</button>
+    </div>
+</form>
